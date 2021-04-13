@@ -1,7 +1,7 @@
 import React from 'react';
 import './FaceRecognition.css';
 
-const FaceRecognition = ({ imageUrl }) => {
+const FaceRecognition = ({ imageUrl, box }) => {
   // src='https://samples.clarifai.com/face-det.jpg'
   return (
     <div className='center ma'>
@@ -14,13 +14,13 @@ const FaceRecognition = ({ imageUrl }) => {
           height='auto'
         />
         <div
-        // className='bounding-box'
-        // style={{
-        //   top: box.topRow,
-        //   right: box.rightCol,
-        //   bottom: box.bottomRow,
-        //   left: box.leftCol,
-        // }}
+          className='bounding-box'
+          style={{
+            top: box.topRow,
+            right: box.rightCol,
+            bottom: box.bottomRow,
+            left: box.leftCol,
+          }}
         ></div>
       </div>
     </div>
