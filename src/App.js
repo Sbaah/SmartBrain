@@ -6,13 +6,13 @@ import Logo from './components/Logo/Logo';
 import Rank from './components/Rank/Rank';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
-import Clarifai from 'clarifai';
+// import Clarifai from 'clarifai';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 
-const app = new Clarifai.App({
-  apiKey: '13920912349246e7ae556f6ae15692e7',
-});
+// const app = new Clarifai.App({
+//   apiKey: '13920912349246e7ae556f6ae15692e7',
+// });
 
 const particlesOptions = {
   particles: {
@@ -85,14 +85,19 @@ class App extends Component {
   };
 
   onButtonSubmit = () => {
-    // https://github.com/Clarifai/clarifai-javascript/blob/master/src/index.js
     this.setState({ imageUrl: this.state.input });
-    app.models
-      .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+    fetch('https://rocky-ravine-80955.herokuapp.com/imageurl', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      Accept: 'application/json',
+      body: JSON.stringify({
+        input: this.state.input,
+      }),
+    })
+      .then((response) => response.json())
       .then((response) => {
-        // console.log(res.outputs[0].data.regions[0].region_info.bounding_box);
         if (response) {
-          fetch('http://localhost:3001/image', {
+          fetch('https://rocky-ravine-80955.herokuapp.com/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             Accept: 'application/json',
@@ -105,13 +110,12 @@ class App extends Component {
               this.setState(
                 Object.assign(this.state.user, { entries: count.entries })
               );
-            });
+            })
+            .catch(console.log);
         }
         this.displayFaceBox(this.calculateFaceLocation(response));
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((err) => console.log(err));
   };
 
   onRouteChange = (route) => {

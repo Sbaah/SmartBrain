@@ -27,7 +27,7 @@ class Register extends React.Component {
     // console.log(this.state);
     // this.props.onRouteChange('home');
 
-    fetch('http://localhost:3001/register', {
+    fetch('https://rocky-ravine-80955.herokuapp.com/register', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
