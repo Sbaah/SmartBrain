@@ -143,7 +143,7 @@ class App extends Component {
           onRouteChange={this.onRouteChange}
         />
         {route === 'home' ? (
-          <div className='home'>
+          <div>
             <Logo />
             <Rank
               name={this.state.user.name}
