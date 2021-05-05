@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+ The back-end coudl be found at [Server/API](https://github.com/Sbaah/SmartBrain-Server-API).
+
 ## Available Scripts
 
 In the project directory, you can run:
