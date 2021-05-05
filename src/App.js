@@ -169,4 +169,3 @@ class App extends Component {
 }
 
 export default App;
-//  "deploy": "gh-pages -d build",
