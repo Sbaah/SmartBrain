@@ -1,8 +1,9 @@
-# Getting Started with Create React App
+# Back-End 
+ The back-end coudl be found at [Server/API](https://github.com/Sbaah/SmartBrain-Server-API).
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
- The back-end coudl be found at [Server/API](https://github.com/Sbaah/SmartBrain-Server-API).
 
 ## Available Scripts
 
