@@ -1,5 +1,5 @@
 # Back-End 
- The back-end coudl be found at [Server/API](https://github.com/Sbaah/SmartBrain-Server-API).
+ The back-end could be found at [Server/API](https://github.com/Sbaah/SmartBrain-Server-API).
 
 ## Getting Started with Create React App
 
